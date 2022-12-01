@@ -2,8 +2,8 @@ github.com/andybalholm/brotli v1.0.4 h1:V7DdXeJtZscaqfNuAdSRuRFzuiKlHSC/Zh3zl9qY
 github.com/andybalholm/brotli v1.0.4/go.mod h1:fO7iG3H7G2nSZ7m0zPUDn85XEX2GTukHGRSepvi9Eig=
 github.com/budimanlai/go-args v0.0.1 h1:4prgT5lq4NdUU7GSrb7v5gGYajZD0v9v1s79DAWjwuI=
 github.com/budimanlai/go-args v0.0.1/go.mod h1:b0bfforNqR+7uI0xslP67t+5pztrU0vUnCTzeqXnS8o=
-github.com/budimanlai/go-cli-service v0.0.5 h1:r089vlrOtJI5BdVdGMdKwsA/Z3Chruil3xOn5/Z3Btk=
-github.com/budimanlai/go-cli-service v0.0.5/go.mod h1:2pzNiv3gxE2tEcbDWQSQaNk2CUv6oboevrGREAv5L8U=
+github.com/budimanlai/go-cli-service v0.0.7 h1:Zb5VoUFAK7Byba/RdyVIBu9cRX3/TgdLdWu7V/L7Qb0=
+github.com/budimanlai/go-cli-service v0.0.7/go.mod h1:2pzNiv3gxE2tEcbDWQSQaNk2CUv6oboevrGREAv5L8U=
 github.com/budimanlai/go-config v0.0.1 h1:gmp7ruxdvwBBCcJq7dg+CWV8KHXo+3H1tj79xJOcZps=
 github.com/budimanlai/go-config v0.0.1/go.mod h1:0sH0WYBNKewFlo9Tl+Xi9CSwJ5IC7kEEgqvDluPEpXc=
 github.com/budimanlai/go-services-ping v0.0.1 h1:uzSf0agM3IR5ThO+CAdIqVi9qjH2q8+RQjKtAXCU2gs=
