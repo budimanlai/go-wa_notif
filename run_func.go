@@ -18,7 +18,7 @@ func StartService(ctx *services.Service) {
 	var wg sync.WaitGroup
 
 	for {
-		result, e := ctx.Db.Select("SELECT * FROM wa_messages WHERE status = 'pending' LIMIT 100")
+		result, e := ctx.Db.Select("SELECT * FROM wa_messages WHERE status = 'pending' LIMIT 10")
 		if e != nil {
 			ctx.Log(e.Error())
 		}
@@ -31,7 +31,7 @@ func StartService(ctx *services.Service) {
 			wg.Wait()
 		} else {
 			ctx.Log("Sleep...")
-			time.Sleep(2 * time.Second)
+			time.Sleep(1 * time.Minute)
 		}
 
 		if ctx.IsStopped {
