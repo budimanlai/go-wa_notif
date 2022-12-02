@@ -29,10 +29,9 @@ func StartService(ctx *services.Service) {
 				go doSend(&wg, ctx, item)
 			}
 			wg.Wait()
-		} else {
-			ctx.Log("Sleep...")
-			time.Sleep(1 * time.Minute)
 		}
+		ctx.Log("Sleep...")
+		time.Sleep(1 * time.Minute)
 
 		if ctx.IsStopped {
 			ctx.Log("Exit from loop StartService")
