@@ -2,6 +2,7 @@ package main
 
 import (
 	"net/url"
+	"strconv"
 	"sync"
 	"time"
 
@@ -15,10 +16,14 @@ var (
 
 func StartService(ctx *services.Service) {
 	baseUrl = ctx.Config.GetString("wa.url")
+	rate_limit := strconv.Itoa(ctx.Config.GetIntOr("wa.rate_limit", 10))
+	rate_time := ctx.Config.GetIntOr("wa.rate_time", 2)
+
+	var duration time.Duration = time.Duration(rate_time) * time.Second
 	var wg sync.WaitGroup
 
 	for {
-		result, e := ctx.Db.Select("SELECT * FROM wa_messages WHERE status = 'pending' LIMIT 10")
+		result, e := ctx.Db.Select("SELECT * FROM wa_messages WHERE status = 'pending' LIMIT " + rate_limit)
 		if e != nil {
 			ctx.Log(e.Error())
 		}
@@ -31,7 +36,7 @@ func StartService(ctx *services.Service) {
 			wg.Wait()
 		}
 		ctx.Log("Sleep...")
-		time.Sleep(1 * time.Minute)
+		time.Sleep(duration)
 
 		if ctx.IsStopped {
 			ctx.Log("Exit from loop StartService")
