@@ -67,7 +67,8 @@ func doSend(wg *sync.WaitGroup, ctx *services.Service, item dbm.Resultset) {
 
 	ctx.Log(string(resp.Body()))
 
-	_, e1 := ctx.Db.Exec("UPDATE wa_messages SET status = 'done', sended_at = now() WHERE id = ?", item.Int("id"))
+	_, e1 := ctx.Db.Exec("UPDATE wa_messages SET status = 'done', sended_at = now(), response_log = ? WHERE id = ?",
+		resp.Body(), item.Int("id"))
 	if e1 != nil {
 		ctx.Log(e1.Error())
 	}
