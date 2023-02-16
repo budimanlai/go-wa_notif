@@ -1,6 +1,6 @@
 folder dan file yang harus ada
-config/main.conf
-runtime/logs/
+- config/main.conf
+- runtime/logs/
 
 build
 ```
